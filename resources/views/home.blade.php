@@ -113,6 +113,7 @@
                             <!--body-->
 
                             <div class="modal-body">
+                                <!--agregar los archivos de la carpeta de controlador de formulario y verificar bien los metodos para que no falle como el proyecto anterior-->
                                 <form id="formPasos" action="" method="post">
                                     <!--paso 1-->
                                     <div class="step" id="step1">
