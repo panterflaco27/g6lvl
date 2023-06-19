@@ -97,7 +97,7 @@
                     si no funciona, agregar lo siguiente
                      tabindex="-1" role="dialog"
                 -->
-                <div class="modal fade" id="modal-diag" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                <div class="modal fade" id="modal-diag" aria-labelledby="modalTitle" tabindex="-1" role="dialog" data-bs-backdrop="static">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
 
@@ -114,7 +114,8 @@
 
                             <div class="modal-body">
                                 <!--agregar los archivos de la carpeta de controlador de formulario y verificar bien los metodos para que no falle como el proyecto anterior-->
-                                <form id="formPasos" action="" method="post">
+                                <form id="formPasos" action="{{ route('formulario.store') }}" method="post">
+                                    @csrf
                                     <!--paso 1-->
                                     <div class="step" id="step1">
                                         <div class="row text-center">
@@ -411,6 +412,21 @@
             // Enviar el formulario
             $('#formPasos').submit(function(event) {
                 event.preventDefault();
+                $.ajax({
+                    url: "{{ route('formulario.store') }}",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        // Maneja la respuesta exitosa de la petición
+                        alert('Enviando formulario');
+                        console.log(response);
+                        window.location.href = "{{ route('home') }}";
+                    },
+                    error: function(xhr) {
+                        alert('por favor seleccione una respuesta en todos los campos');
+                        console.log(xhr.responseText);
+                    }
+    });
                 $('#modal-diag').modal('hide');
             });
         });
