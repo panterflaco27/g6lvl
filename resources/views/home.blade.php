@@ -172,7 +172,7 @@
                                                 </div>
                                                 <div class="col-7 mx-auto">
                                                     <input class="form-check-input" type="checkbox" name="check-tk" id="tiktok" value="tiktok" onclick="habilitarInput('tiktok', 'tiktokInput')">
-                                                    <label class="form-check-label" for="tiktok">Tiktok</label>
+                                                    <label class="col-3 form-check-label" for="tiktok">Tiktok</label>
                                                     <input class="input_perf" type="text" id="tiktokInput" placeholder="Perfil..." disabled>
                                                 </div>
                                                 <div class="col-7 mx-auto">
@@ -204,10 +204,9 @@
                                         <div class="row text-center">
                                             <h3 class="fs-6 mx-auto">¿Cuenta con un sitio web para ofrecer sus servicios?</h3>
                                             <div class="form-check">
-                                                <div class="col mx-auto">
-                                                    <input class="col-2 " type="radio" class="form-check-input" name="radio-pw" id="radio-si" value="si">
-                                                    <label class="col-1" for="radio-si" class="form-check-label">Si</label>
-                                                    <input class="col-3 input_perf" type="text">
+                                                <div class="col-2 mx-auto">
+                                                    <input class="form-check-input" type="radio" name="radio-pw" id="radio-si" value="si">
+                                                    <label class="form-check-label" for="radio-si">Si</label>
                                                 </div>
                                                 <div class="col-2 mx-auto">
                                                     <input type="radio" class="form-check-input" name="radio-pw" id="radio-no" value="no">
