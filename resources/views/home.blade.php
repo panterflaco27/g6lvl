@@ -117,7 +117,7 @@
                                 <form id="formPasos" action="{{ route('formulario.store') }}" method="post">
                                     @csrf
                                     <!--paso 1-->
-                                    <div class="step" id="step1">
+                                    <!--div class="step" id="step1">
                                         <div class="row text-center">
                                             <h3 class="fs-6 mx-auto">¿Cuenta con un correo electrónico?</h3>
                                             <div class="form-check">
@@ -131,10 +131,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div-->
 
                                     <!--paso 2-->
-                                    <div class="step" id="step2">
+                                    <div class="step" id="step1">
                                         <div class="row text-center">
                                             <h3 class="fs-6 mx-auto">¿Sabe utilizar la paquetería de Office (Word, Excel, PowerPoint, etc…)?</h3>
                                             <div class="form-check">
@@ -151,29 +151,34 @@
                                     </div>
 
                                     <!--paso 3-->
-                                    <div class="step" id="step3">
+                                    <div class="step" id="step2">
                                         <div class="row text-center">
                                             <h3 class="fs-6 mx-auto">Cual(es) de las siguientes aplicaciones utiliza para comunicarse:</h3>
                                             <div class="form-check col">
-                                                <div class="col-2 mx-auto">
-                                                    <input type="checkbox" class="form-check-input" name="check-face" id="facebook" value="facebook">
-                                                    <label for="facebook" class="form-check-label">Facebook</label>
+                                                <div class="col-7 mx-auto">
+                                                    <input class="form-check-input" type="checkbox" name="check-face" id="facebook" value="facebook" onclick="habilitarInput('facebook', 'facebookInput')">
+                                                    <label class="form-check-label" for="facebook">Facebook</label>
+                                                    <input class="input_perf" type="text" id="facebookInput" placeholder="Perfil..." disabled>
                                                 </div>
-                                                <div class="col-2 mx-auto">
-                                                    <input type="checkbox" class="form-check-input" name="check-whp" id="whatsapp" value="whatsapp">
-                                                    <label for="whatsapp" class="form-check-label">Whatsapp</label>
+                                                <div class="col-7 mx-auto">
+                                                    <input class="form-check-input" type="checkbox" name="check-whp" id="whatsapp" value="whatsapp" onclick="habilitarInput('whatsapp', 'whatsappInput')">
+                                                    <label class="form-check-label" for="whatsapp">Whatsapp</label>
+                                                    <input class="input_perf" type="text" id="whatsappInput" placeholder="Número..." disabled>
                                                 </div>
-                                                <div class="col-2 mx-auto">
-                                                    <input type="checkbox" class="form-check-input" name="check-ins" id="instagram" value="instagram">
-                                                    <label for="instagram" class="form-check-label">Instagram</label>
+                                                <div class="col-7 mx-auto">
+                                                    <input class="form-check-input" type="checkbox" name="check-ins" id="instagram" value="instagram" onclick="habilitarInput('instagram', 'instagramInput')">
+                                                    <label class="form-check-label" for="instagram">Instagram</label>
+                                                    <input class="input_perf" type="text" id="instagramInput" placeholder="Perfil..." disabled>
                                                 </div>
-                                                <div class="col-2 mx-auto">
-                                                    <input type="checkbox" class="form-check-input" name="check-tk" id="tiktok" value="tiktok">
-                                                    <label for="tiktok" class="form-check-label">Tiktok</label>
+                                                <div class="col-7 mx-auto">
+                                                    <input class="form-check-input" type="checkbox" name="check-tk" id="tiktok" value="tiktok" onclick="habilitarInput('tiktok', 'tiktokInput')">
+                                                    <label class="form-check-label" for="tiktok">Tiktok</label>
+                                                    <input class="input_perf" type="text" id="tiktokInput" placeholder="Perfil..." disabled>
                                                 </div>
-                                                <div class="col-2 mx-auto">
-                                                    <input type="checkbox" class="form-check-input" name="check-tlm" id="telegram" value="telegram">
-                                                    <label for="telegram" class="form-check-label">Telegram</label>
+                                                <div class="col-7 mx-auto">
+                                                    <input class="form-check-input" type="checkbox" name="check-tlm" id="telegram" value="telegram" onclick="habilitarInput('telegram', 'telegramInput')">
+                                                    <label class="form-check-label" for="telegram">Telegram</label>
+                                                    <input class="input_perf" type="text" id="telegramInput" placeholder="Usuario..." disabled>
                                                 </div>
                                             </div>
                                         </div>
@@ -195,13 +200,14 @@
                                     </div>
 
                                     <!--paso 4-->
-                                    <div class="step" id="step4">
+                                    <div class="step" id="step3">
                                         <div class="row text-center">
-                                            <h3 class="fs-6 mx-auto">¿Cuenta con una página web para ofrecer sus servicios?</h3>
+                                            <h3 class="fs-6 mx-auto">¿Cuenta con un sitio web para ofrecer sus servicios?</h3>
                                             <div class="form-check">
-                                                <div class="col-2 mx-auto">
-                                                    <input type="radio" class="form-check-input" name="radio-pw" id="radio-si" value="si">
-                                                    <label for="radio-si" class="form-check-label">Si</label>
+                                                <div class="col mx-auto">
+                                                    <input class="col-2 " type="radio" class="form-check-input" name="radio-pw" id="radio-si" value="si">
+                                                    <label class="col-1" for="radio-si" class="form-check-label">Si</label>
+                                                    <input class="col-3 input_perf" type="text">
                                                 </div>
                                                 <div class="col-2 mx-auto">
                                                     <input type="radio" class="form-check-input" name="radio-pw" id="radio-no" value="no">
@@ -223,7 +229,7 @@
                                             </div>
                                         </div>
                                         <div class="row text-center">
-                                            <h3 class="fs-6 mx-auto">¿Cuenta con alguna Fanpage o algún blog para promocionar su empresa?</h3>
+                                            <h3 class="fs-6 mx-auto">¿Cuenta con una Fanpage para promocionar su empresa?</h3>
                                             <div class="form-check">
                                                 <div class="col-2 mx-auto">
                                                     <input type="radio" class="form-check-input" name="radio-fp" id="radio-si" value="si">
@@ -238,9 +244,9 @@
                                     </div>
 
                                     <!--paso 5-->
-                                    <div class="step" id="step5">
+                                    <div class="step" id="step4">
                                         <div class="row text-center">
-                                            <h3 class="fs-6 mx-auto">¿Sabe utilizar laptop o pc?</h3>
+                                            <h3 class="fs-6 mx-auto">¿Sabe utilizar computadora?</h3>
                                             <div class="form-check">
                                                 <div class="col-2 mx-auto">
                                                     <input type="radio" class="form-check-input" name="radio-pc" id="radio-si" value="si">
@@ -253,7 +259,7 @@
                                             </div>
                                         </div>
                                         <div class="row text-center">
-                                            <h3 class="fs-6 mx-auto">¿Sabe utilizar tabletas o smartphone?</h3>
+                                            <h3 class="fs-6 mx-auto">¿Sabe utilizar smartphone?</h3>
                                             <div class="form-check">
                                                 <div class="col-2 mx-auto">
                                                     <input type="radio" class="form-check-input" name="radio-tb" id="radio-si" value="si">
@@ -268,9 +274,9 @@
                                     </div>
 
                                     <!--paso 6-->
-                                    <div class="step" id="step6">
+                                    <div class="step" id="step5">
                                         <div class="row text-center">
-                                            <h3 class="fs-6 mx-auto">¿Tiene experiencia sobre el marketing digital?</h3>
+                                            <h3 class="fs-6 mx-auto">¿Sabe lo que es el marketing digital?</h3>
                                             <div class="form-check">
                                                 <div class="col-2 mx-auto">
                                                     <input type="radio" class="form-check-input" name="radio-md" id="radio-si" value="si">
@@ -298,7 +304,7 @@
                                     </div>
 
                                     <!--paso 7-->
-                                    <div class="step" id="step7">
+                                    <div class="step" id="step6">
                                         <div class="row text-center">
                                             <h3 class="fs-6 mx-auto">¿Cuentas con información de los clientes?</h3>
                                             <div class="form-check">
@@ -426,10 +432,21 @@
                         alert('por favor seleccione una respuesta en todos los campos');
                         console.log(xhr.responseText);
                     }
-    });
+                });
                 $('#modal-diag').modal('hide');
             });
         });
+
+        function habilitarInput(checkboxId, inputId) {
+            var checkbox = document.getElementById(checkboxId);
+            var input = document.getElementById(inputId);
+            
+            if (checkbox.checked) {
+                input.disabled = false;
+            } else {
+                input.disabled = true;
+            }
+        }
     </script>
 @endsection
 <!---->

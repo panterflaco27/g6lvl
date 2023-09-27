@@ -83,3 +83,16 @@ a{
     background: #283747;
     color: white;
 }
+
+.input_perf {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+.input_perf:disabled {
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+    color: gray;
+    background-color: white;
+}
